@@ -1,34 +1,61 @@
 import { Routes } from '@angular/router';
+import { AuthLayoutComponent } from './Layout/auth-layout/auth-layout.component';
+import { SignInComponent } from './Features/sign-in/sign-in.component';
+import { SignUpComponent } from './Features/sign-up/sign-up.component';
+import { MainLayoutComponent } from './Layout/main-layout/main-layout.component';
+import { HomeComponent } from './Features/home/home.component';
+import { CategoriesComponent } from './Features/categories/categories.component';
+import { BrandsComponent } from './Features/brands/brands.component';
+import { ProductsComponent } from './Features/products/products.component';
+import { NotFoundComponent } from './Features/not-found/not-found.component';
 
 export const routes: Routes = [
     {
         path: '',
-        loadComponent: () => import('./Features/home/home.component').then(m => m.HomeComponent),
-        title: 'home page'
+        component: AuthLayoutComponent,children:[
+            {
+                path: '',
+                redirectTo: "signIn",
+                pathMatch: "full"
+            },
+            {
+                path: "signIn",
+                component: SignInComponent,
+            },
+            {
+                path: "signUp",
+                component: SignUpComponent,
+            },
+        ]
     },
     {
-        path: 'home',
-        redirectTo: '',
-        pathMatch: 'full'
+        path: '',
+        component: MainLayoutComponent,children:[
+            {
+                path: '',
+                redirectTo: "home",
+                pathMatch: "full"
+            },
+            {
+                path: "home",
+                component: HomeComponent
+            },
+            {
+                path: "products",
+                component: ProductsComponent
+            },
+            {
+                path: "categories",
+                component: CategoriesComponent
+            },
+            {
+                path: "brands",
+                component: BrandsComponent
+            },
+        ]
     },
     {
-        path: 'AuthNavbarComponent',
-        loadComponent: () => import('./Features/auth-navbar/auth-navbar.component').then(m => m.AuthNavbarComponent),
-        title: 'auth-navbar'
-    },
-    {
-        path: 'main-navbar',
-        loadComponent: () => import('./Features/main-navbar/main-navbar.component').then(m => m.MainNavbarComponent),
-        title: 'main-navbar'
-    },
-    {
-        path: 'brands',
-        loadComponent: () => import('./Features/brands/brands.component').then(m => m.BrandsComponent),
-        title: 'brands page'
-    },
-    {
-        path: '**',
-        loadComponent: () => import('./Features/not-found/not-found.component').then(m => m.NotFoundComponent),
-        title: 'not found page'
-    },
+        path: "**",
+        component: NotFoundComponent
+    }
 ];

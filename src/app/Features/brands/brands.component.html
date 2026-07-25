@@ -1,1 +1,9 @@
-<p>brands works!</p>
+<div class="container mt-5">
+  <div class="row g-3">
+      @for (brand of brands(); track brand._id) {
+        <div class="col-lg-4">
+            <app-brand [BrandData]="brand"></app-brand>
+        </div>
+      }
+  </div>
+</div>

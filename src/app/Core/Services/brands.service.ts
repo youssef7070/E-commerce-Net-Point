@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class BrandsService {
     private _httpClient = inject(HttpClient);
 
-    getAllBrands():Observable<any> {
+    getAllBrands(): Observable<any> {
         return this._httpClient.get(`${BaseURL}/api/v1/brands`);
     }
 }

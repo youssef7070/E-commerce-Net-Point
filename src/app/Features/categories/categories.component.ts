@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
-import { CategoriesService } from '../../core/Services/categories.service';
-import { Category } from '../../core/Interfaces/category.interface';
+import { CategoriesService } from '../../Core/services/categories.service'
+import { Category } from '../../Core/Interfaces/category.interface';
 
 @Component({
   selector: 'app-categories',

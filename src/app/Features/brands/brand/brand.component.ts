@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Brand } from '../../../core/Interfaces/brand.interface';
+import { Brand } from '../../../Core/Interfaces/brand.interface';
 
 @Component({
   selector: 'app-brand',
@@ -8,5 +8,5 @@ import { Brand } from '../../../core/Interfaces/brand.interface';
   styleUrl: './brand.component.scss',
 })
 export class BrandComponent {
-  @Input({required: true}) BrandData!: Brand;
+  @Input({ required: true }) BrandData!: Brand;
 }

@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
-import { Brand } from '../../core/Interfaces/brand.interface';
+import { Brand } from '../../Core/Interfaces/brand.interface';
 import { BrandComponent } from './brand/brand.component';
-import { BrandsService } from '../../core/Services/brands.service';
+import { BrandsService } from '../../Core/services/brands.service';
 
 @Component({
   selector: 'app-brands',

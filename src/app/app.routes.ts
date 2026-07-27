@@ -10,27 +10,27 @@ import { ProductsComponent } from './Features/products/products.component';
 import { NotFoundComponent } from './Features/not-found/not-found.component';
 
 export const routes: Routes = [
+    // {
+    //     path: '',
+    //     component: AuthLayoutComponent, children: [
+    //         {
+    //             path: '',
+    //             redirectTo: "signIn",
+    //             pathMatch: "full"
+    //         },
+    //         {
+    //             path: "signIn",
+    //             component: SignInComponent,
+    //         },
+    //         {
+    //             path: "signUp",
+    //             component: SignUpComponent,
+    //         },
+    //     ]
+    // },
     {
         path: '',
-        component: AuthLayoutComponent,children:[
-            {
-                path: '',
-                redirectTo: "signIn",
-                pathMatch: "full"
-            },
-            {
-                path: "signIn",
-                component: SignInComponent,
-            },
-            {
-                path: "signUp",
-                component: SignUpComponent,
-            },
-        ]
-    },
-    {
-        path: '',
-        component: MainLayoutComponent,children:[
+        component: MainLayoutComponent, children: [
             {
                 path: '',
                 redirectTo: "home",
@@ -45,9 +45,15 @@ export const routes: Routes = [
                 component: ProductsComponent
             },
             {
+                path: "products/:id",
+                component: ProductsComponent
+            }
+            ,
+            {
                 path: "categories",
                 component: CategoriesComponent
             },
+
             {
                 path: "brands",
                 component: BrandsComponent

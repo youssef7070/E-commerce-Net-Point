@@ -1,1 +1,113 @@
-<p>products works!</p>
+<div class="container py-4">
+
+    <h1 class="flex justify-content-center text-success fw-bold  text-center ">Products</h1>
+    <!-- 1. Display all products if no product is selected -->
+    @if (!selectedProductDetails()) {
+    <div class="row g-4">
+        @for (prod of allProducts(); track prod._id) {
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+            <div (click)="showProductDetails(prod._id)"
+                class="card h-100 border-light rounded-4 p-3 shadow-sm hover-shadow transition-all group font-sans">
+                <div class="position-relative overflow-hidden mb-2">
+                    <img [src]="prod.imageCover" [alt]="prod.title" loading="lazy" decoding="async"
+                        class="card-img-top object-fit-contain" />
+
+                    <!-- Favorite and Quick View buttons -->
+                    <div class="position-absolute top-0 end-0 m-2 d-flex flex-column gap-2">
+                        <button
+                            class="btn btn-light rounded-circle shadow-sm border p-0 d-flex align-items-center justify-content-center hover-emerald transition-all"
+                            style="width: 40px; height: 40px;">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <button (click)="showProductDetails(prod._id)"
+                            class="btn btn-light rounded-circle shadow-sm border p-0 d-flex align-items-center justify-content-center hover-emerald transition-all"
+                            style="width: 40px; height: 40px;">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column gap-1">
+                    <p class="text-secondary small mb-0">{{ prod.category.name }}</p>
+
+                    <h3
+                        class="h6 font-weight-medium text-truncate-2 text-dark hover-text-emerald cursor-pointer transition-colors mb-0">
+                        {{ prod.title }}
+                    </h3>
+
+                    <div class="d-flex align-items-center gap-1">
+                        <div class="text-warning small d-flex gap-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star text-muted opacity-50"></i>
+                        </div>
+                        <span class="small text-secondary fw-medium">
+                            {{ prod.ratingsAverage }} ({{ prod.ratingsQuantity }})
+                        </span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between pt-2">
+                        <span class="h5 fw-medium text-dark mb-0">{{ prod.price | currency }}</span>
+
+                        <button
+                            class="btn btn-emerald rounded-3 d-flex align-items-center justify-content-center p-0 shadow-sm"
+                            style="width: 40px; height: 40px;">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        }
+    </div>
+    }
+
+    <!-- 2. Display selected product details -->
+    @else {
+    @if (selectedProductDetails(); as selectedProduct) {
+    <div>
+        <!-- Back button -->
+        <button (click)="backToAllProducts()" class="btn btn-outline-secondary mb-4">
+            <i class="fas fa-arrow-left me-2"></i> Back to all products
+        </button>
+
+        <!-- Detailed product card -->
+        <div class="card p-4 border-0 shadow-sm rounded-4">
+            <div class="row align-items-center g-4">
+                <div class="col-md-5">
+                    <img [src]="selectedProduct.imageCover" [alt]="selectedProduct.title"
+                        class="img-fluid rounded-3 w-100" />
+                </div>
+                <div class="col-md-7">
+                    <p class="text-success fw-semibold mb-1">{{ selectedProduct.category.name }}</p>
+                    <h2 class="h3 fw-bold text-dark">{{ selectedProduct.title }}</h2>
+                    <p class="text-muted mt-3">{{ selectedProduct.description }}</p>
+
+                    <div class="d-flex align-items-center gap-3 my-4">
+                        <span class="h3 fw-bold text-dark mb-0">{{ selectedProduct.price | currency }}</span>
+                        <span class="badge bg-warning text-dark fs-6">
+                            <i class="fas fa-star me-1"></i>{{ selectedProduct.ratingsAverage }}
+                        </span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-emerald btn-lg px-4 rounded-3">
+                            <i class="fas fa-cart-plus me-2"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-outline-danger btn-lg rounded-3">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    }
+
+</div>

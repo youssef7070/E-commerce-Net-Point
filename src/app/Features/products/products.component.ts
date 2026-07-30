@@ -1,6 +1,6 @@
 import { Component, effect, inject, input, signal } from '@angular/core';
-import { Product } from '../../Core/Interfaces/product.interface';
-import { ProductsService } from '../../Core/services/products.service';
+import { Product } from '../../core/Interfaces/product.interface';
+import { ProductsService } from '../../core/services/products.service';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
 

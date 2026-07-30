@@ -1,28 +1,52 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container">
-        <h1 class="navbar-brand text-main fw-bold cursor-pointer">
-            Netpoint Store
-        </h1>
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-4 shadow-sm">
+  <div class="container">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold fs-4 text-primary d-flex align-items-center gap-2 m-0"
+       routerLink="/home">
+      <i class="fa-solid fa-store"></i>
+      <span>Netpoint</span>
+    </a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLinkActive="navbar-active" routerLink="/signIn">
-                        Sign In
-                    </a>
-                </li>
+    <!-- Mobile Toggler -->
+    <button
+      class="navbar-toggler border-0 shadow-none p-2"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#authNavbar"
+      aria-controls="authNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLinkActive="navbar-active" routerLink="/signUp">
-                        Sign Up
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="authNavbar">
+
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-2 mt-3 mt-lg-0">
+
+        <li class="nav-item">
+          <a
+            class="nav-link px-3 fw-medium"
+            routerLink="/signIn"
+            routerLinkActive="active">
+            Sign In
+          </a>
+        </li>
+
+        <li class="vr d-none d-lg-block my-2 text-secondary opacity-25"></li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link px-3 fw-medium"
+            routerLink="/signUp"
+            routerLinkActive="active">
+            Sign Up
+          </a>
+        </li>
+
+      </ul>
+
     </div>
+  </div>
 </nav>

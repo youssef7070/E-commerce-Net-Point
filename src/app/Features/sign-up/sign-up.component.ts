@@ -8,7 +8,7 @@ import { SignUpData } from '../../core/Interfaces/signup.interface';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ReactiveFormsModule,InputComponent],
+  imports: [ReactiveFormsModule, InputComponent],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })
@@ -20,14 +20,14 @@ export class SignUpComponent {
   flag: boolean = true;
   isLoading: boolean = false;
   msgError: string = "";
-  
+
   signUpForm = new FormGroup(
     {
-      name: new FormControl('',{validators:[Validators.required, Validators.minLength(3), Validators.maxLength(20)]}),
-      password: new FormControl('',{validators:[Validators.required, Validators.pattern(/^\w{6,}$/)]}),
-      rePassword: new FormControl('',{validators:[Validators.required, this.confirmPassword]}),
-      phone: new FormControl('',{validators:[Validators.required, Validators.pattern(/^01[0125][0-9]{8}$/)]}),
-      email:new FormControl('',{validators:[Validators.required,Validators.email]}),
+      name: new FormControl('', { validators: [Validators.required, Validators.minLength(3), Validators.maxLength(20)] }),
+      password: new FormControl('', { validators: [Validators.required, Validators.pattern(/^\w{6,}$/)] }),
+      rePassword: new FormControl('', { validators: [Validators.required, this.confirmPassword] }),
+      phone: new FormControl('', { validators: [Validators.required, Validators.pattern(/^01[0125][0-9]{8}$/)] }),
+      email: new FormControl('', { validators: [Validators.required, Validators.email] }),
     }, { validators: this.confirmPassword }
   )
 

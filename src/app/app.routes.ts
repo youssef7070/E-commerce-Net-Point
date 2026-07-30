@@ -8,6 +8,7 @@ import { CategoriesComponent } from './Features/categories/categories.component'
 import { BrandsComponent } from './Features/brands/brands.component';
 import { ProductsComponent } from './Features/products/products.component';
 import { NotFoundComponent } from './Features/not-found/not-found.component';
+import { ForgotComponent } from './Features/forgot/forgot.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,10 @@ export const routes: Routes = [
             {
                 path: "signIn",
                 component: SignInComponent,
+            },
+            {
+                path: "forgot",
+                component: ForgotComponent,
             },
             {
                 path: "signUp",

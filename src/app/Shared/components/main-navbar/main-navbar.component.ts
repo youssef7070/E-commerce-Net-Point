@@ -10,6 +10,9 @@ import { AuthService } from '../../../core/services/auth.service';
 })
 export class MainNavbarComponent {
   constructor(private _authService: AuthService) {
-    _authService.validateToken();
+  }
+
+  logout(): void {
+    this._authService.logout();
   }
 }

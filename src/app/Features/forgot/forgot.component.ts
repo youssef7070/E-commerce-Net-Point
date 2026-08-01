@@ -84,7 +84,7 @@ export class ForgotComponent {
 
       this.authService.resetPassword(data).subscribe({
         next: (res) => {
-          this.route.navigate(['/login'])
+          this.route.navigate(['/signIn'])
         }
       })
 

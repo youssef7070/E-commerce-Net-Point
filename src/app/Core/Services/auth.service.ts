@@ -24,24 +24,24 @@ export class AuthService {
     //verfiy token
     verifyToken(): Observable<any> {
         let token = localStorage.getItem("token")!;
-        return this._httpClient.get(`${BaseURL}/api/v1/auth/verifyToken`,{headers: {token: token}});
+        return this._httpClient.get(`${BaseURL}/api/v1/auth/verifyToken`, { headers: { token: token } });
     }
 
     validateToken() {
         let token = localStorage.getItem("token")!;
         if (token) {
-            try{
+            try {
                 let payload = jwtDecode(token);
                 this.verifyToken().subscribe({
                     next: (res) => {
                         console.log("Token is verfied");
                     },
                     error: (err) => {
-                        console.log("Token is invalid or expired",err);
+                        console.log("Token is invalid or expired", err);
                         this.logout();
                     }
                 })
-            }catch(err){
+            } catch (err) {
                 this.logout();
             }
         } else {

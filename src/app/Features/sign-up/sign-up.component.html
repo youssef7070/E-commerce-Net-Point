@@ -5,7 +5,7 @@
             
             <!-- Upgraded Header -->
             <div class="text-center mb-4">
-                <h2 class="fw-bold text-primary mb-1">Sign Up Now</h2>
+                <h2 class="fw-bold text-success mb-1">Sign Up Now</h2>
                 <p class="text-muted">Create an account to get started</p>
             </div>
             
@@ -42,11 +42,11 @@
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold shadow-sm" [disabled]="isLoading">
+                <button type="submit" class="btn btn-success w-100 py-2 fw-semibold shadow-sm" [disabled]="isLoading">
                     @if (isLoading) {
                         <i class="fas fa-spinner fa-spin me-2"></i> Creating Account...
                     } @else {
-                        Register
+                        Sign Up
                     }
                 </button>
                 

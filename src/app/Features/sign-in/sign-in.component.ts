@@ -32,6 +32,7 @@ export class SignInComponent implements OnDestroy {
 
       this.subscription = this.authServices.signIn(this.signInForm.value).subscribe({
         next: (res) => {
+          localStorage.setItem('token', res.token);
           if (res.message === 'success') {
             this.msgError = '';
             setTimeout(() => {

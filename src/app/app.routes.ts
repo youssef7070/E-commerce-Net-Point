@@ -9,11 +9,13 @@ import { BrandsComponent } from './Features/brands/brands.component';
 import { ProductsComponent } from './Features/products/products.component';
 import { NotFoundComponent } from './Features/not-found/not-found.component';
 import { ForgotComponent } from './Features/forgot/forgot.component';
+import { authGuard } from './guards/auth-guard.guard';
+import { isLoggedGuard } from './guards/is-logged.guard';
 
 export const routes: Routes = [
     {
         path: '',
-        component: AuthLayoutComponent, children: [
+        component: AuthLayoutComponent, canActivate:[isLoggedGuard], children: [
             {
                 path: '',
                 redirectTo: "signIn",
@@ -35,7 +37,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        component: MainLayoutComponent, children: [
+        component: MainLayoutComponent, canActivate:[authGuard], children: [
             {
                 path: '',
                 redirectTo: "home",
@@ -58,7 +60,6 @@ export const routes: Routes = [
                 path: "categories",
                 component: CategoriesComponent
             },
-
             {
                 path: "brands",
                 component: BrandsComponent

@@ -2,7 +2,7 @@ import { Component, inject, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../../core/Services/auth.service';
+import { AuthService } from '../../core/services/auth.service';
 import { InputComponent } from "../../Shared/components/input/input.component";
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MainNavbarComponent } from '../../Shared/components/main-navbar/main-navbar.component';
-import { AuthService } from '../../core/Services/auth.service';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-main-layout',

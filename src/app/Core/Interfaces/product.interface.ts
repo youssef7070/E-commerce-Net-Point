@@ -1,11 +1,11 @@
 import { Brand } from "./brand.interface";
 import { Category } from "./category.interface";
-import { Subcategory } from "./subcategory.interface";
+import { SubCategory } from "./subcategory.interface";
 
 export interface Product {
     sold: number;
     images: string[];
-    subcategory: Subcategory[];
+    subcategory: SubCategory[];
     ratingsQuantity: number;
     _id: string;
     id: string;

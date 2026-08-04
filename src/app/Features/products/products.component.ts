@@ -1,8 +1,9 @@
 import { Component, effect, inject, input, signal } from '@angular/core';
 import { Product } from '../../core/Interfaces/product.interface';
-import { ProductsService } from '../../core/Services/products.service';
+import { ProductsService } from '../../core/services/products.service';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { CartService } from '../../core/services/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class ProductsComponent {
 
   private readonly productsService = inject(ProductsService);
+  private readonly cartService = inject(CartService);
   private readonly router = inject(Router);
 
   // Route parameter binding (or managed via ActivatedRoute)
@@ -66,6 +68,17 @@ export class ProductsComponent {
 
   backToAllProducts(): void {
     this.router.navigate(['/products']);
+  }
+
+  addToCart(productId: string): void {
+    this.cartService.addProductToCart(productId).subscribe({
+      next: (res) => {
+        console.log('Product added to cart:', res);
+      },
+      error: (err) => {
+        console.error('Error adding product to cart:', err);
+      },
+    });
   }
 
 }

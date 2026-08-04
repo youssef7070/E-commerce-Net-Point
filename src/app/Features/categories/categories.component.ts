@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { CategoriesService } from '../../core/Services/categories.service'
+import { CategoriesService } from '../../core/services/categories.service'
 import { Category } from '../../core/Interfaces/category.interface';
 
 @Component({

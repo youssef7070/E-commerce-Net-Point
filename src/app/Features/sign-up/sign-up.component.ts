@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../../core/Services/auth.service';
+import { AuthService } from '../../core/services/auth.service';
 import { InputComponent } from '../../Shared/components/input/input.component';
 import { SignUpData } from '../../core/Interfaces/signup.interface';
 

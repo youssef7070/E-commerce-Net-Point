@@ -53,9 +53,9 @@
                     <div class="d-flex align-items-center justify-content-between pt-2">
                         <span class="h5 fw-medium text-dark mb-0">{{ prod.price | currency }}</span>
 
-                        <button
+                        <button type="button"
                             class="btn btn-emerald rounded-3 d-flex align-items-center justify-content-center p-0 shadow-sm"
-                            style="width: 40px; height: 40px;">
+                            style="width: 40px; height: 40px;" (click)="addToCart(prod._id); $event.stopPropagation()">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>

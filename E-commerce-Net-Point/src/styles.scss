@@ -1,0 +1,58 @@
+// المتغيرات الخاصة بالنمط
+$emerald-color: #059669;
+$emerald-hover: #047857;
+
+// تنسيقات الـ Card الأساسية
+.card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+// قص النص عند سطرين (Line Clamp)
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+// أزرار Wishlist و View
+.hover-emerald {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: $emerald-color !important;
+        color: #fff !important;
+        border-color: $emerald-color !important;
+    }
+}
+
+// تغيير لون العنوان عند التمرير
+.hover-text-emerald {
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $emerald-color !important;
+    }
+}
+
+// زرق إضافة إلى السلة
+.btn-emerald {
+    background-color: $emerald-color;
+    border-color: $emerald-color;
+    color: #fff;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+        background-color: $emerald-hover;
+        border-color: $emerald-hover;
+        color: #fff;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}

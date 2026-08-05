@@ -4,6 +4,7 @@ import { ProductsService } from '../../core/services/products.service';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { CartService } from '../../core/services/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-products',
@@ -16,6 +17,7 @@ export class ProductsComponent {
   private readonly productsService = inject(ProductsService);
   private readonly cartService = inject(CartService);
   private readonly router = inject(Router);
+  private readonly toastr = inject(ToastrService);
 
   // Route parameter binding (or managed via ActivatedRoute)
   id = input<string | null>(null);
@@ -73,10 +75,14 @@ export class ProductsComponent {
   addToCart(productId: string): void {
     this.cartService.addProductToCart(productId).subscribe({
       next: (res) => {
-        console.log('Product added to cart:', res);
+        this.toastr.success('Product added to cart successfully.', 'Added to Cart');
+        if (res?.numOfCartItems != null) {
+          this.cartService.cartCount.set(res.numOfCartItems);
+        }
       },
       error: (err) => {
         console.error('Error adding product to cart:', err);
+        this.toastr.error('Could not add the product to cart. Please try again.', 'Cart Error');
       },
     });
   }

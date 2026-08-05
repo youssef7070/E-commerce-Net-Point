@@ -11,11 +11,12 @@ import { NotFoundComponent } from './Features/not-found/not-found.component';
 import { ForgotComponent } from './Features/forgot/forgot.component';
 import { authGuard } from './guards/auth-guard.guard';
 import { isLoggedGuard } from './guards/is-logged.guard';
+import { CartComponent } from './Features/cart/cart.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: AuthLayoutComponent, canActivate:[isLoggedGuard], children: [
+        component: AuthLayoutComponent, canActivate: [isLoggedGuard], children: [
             {
                 path: '',
                 redirectTo: "signIn",
@@ -37,7 +38,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        component: MainLayoutComponent, canActivate:[authGuard], children: [
+        component: MainLayoutComponent, canActivate: [authGuard], children: [
             {
                 path: '',
                 redirectTo: "home",
@@ -63,6 +64,10 @@ export const routes: Routes = [
             {
                 path: "brands",
                 component: BrandsComponent
+            },
+            {
+                path: "cart",
+                component: CartComponent
             },
         ]
     },

@@ -1,0 +1,194 @@
+<section class="container py-5 my-auto">
+    <div class="row align-items-center g-5">
+
+        <!-- !------------------------------ Right side (Form Card) !------------------------------ -->
+        <div class="col-12 col-lg-6 order-1 order-lg-2 d-flex justify-content-center">
+            <div class="card border-0 shadow-sm p-4 p-md-5 w-100 rounded-4" style="max-width: 440px;">
+
+                <!-- Logo -->
+                <div class="text-center mb-4">
+                    <span class="fs-3 fw-bold">
+                        <span class="text-success">Fresh</span><span class="text-dark">Cart</span>
+                    </span>
+                </div>
+
+                <h2 class="fs-4 fw-bold text-dark text-center mb-1">Forgot Password?</h2>
+                <p class="text-muted text-center small mb-4">No worries, we'll send you a reset code</p>
+
+                <!-- Step indicator design -->
+                <div class="d-flex align-items-center justify-content-center mb-4 px-2">
+                    <div class="rounded-circle bg-light text-secondary d-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 40px; height: 40px;">
+                        <i class="fa-solid fa-envelope fs-6"></i>
+                    </div>
+
+                    <div class="flex-grow-1 border-top border-2 mx-2"></div>
+
+                    <div class="rounded-circle bg-light text-secondary d-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 40px; height: 40px;">
+                        <i class="fa-solid fa-key fs-6"></i>
+                    </div>
+
+                    <div class="flex-grow-1 border-top border-2 mx-2"></div>
+
+                    <div class="rounded-circle bg-light text-secondary d-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 40px; height: 40px;">
+                        <i class="fa-solid fa-lock fs-6"></i>
+                    </div>
+                </div>
+
+                <!-- step - 1 forgot password -->
+                @if (step() === 1) {
+                <div>
+                    <form (submit)="submitEmail($event)">
+                        <div class="mb-4">
+                            <label for="email" class="form-label small fw-semibold text-secondary">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 rounded-start-3 text-muted">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <input [formControl]="email" type="email" id="email"
+                                    class="form-control bg-light border-start-0 rounded-end-3 py-2 small"
+                                    placeholder="Enter your email address" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3 shadow-sm">
+                            Send Reset Code
+                        </button>
+                    </form>
+
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-decoration-none text-success small fw-medium">
+                            <i class="fa-solid fa-arrow-right ms-1"></i> Back to Sign In
+                        </a>
+                    </div>
+                </div>
+                }
+
+                <!-- step - 2 verify code -->
+                @if (step() === 2) {
+                <div>
+                    <form (submit)="submitCode($event)">
+                        <div class="mb-3">
+                            <label for="verification_code" class="form-label small fw-semibold text-secondary">
+                                Verification Code
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0 rounded-start-3 text-muted">
+                                    <i class="fa-solid fa-shield fs-5"></i>
+                                </span>
+                                <input [formControl]="code" type="text" id="verification_code" maxlength="6"
+                                    class="form-control border-start-0 rounded-end-3 text-center fs-4 text-secondary py-2"
+                                    style="letter-spacing: 0.25em;"
+                                    placeholder="••••••" autocomplete="one-time-code" />
+                            </div>
+                        </div>
+
+                        <div class="text-center small text-muted mb-4">
+                            Didn't receive the code?
+                            <button type="button" class="btn btn-link text-success p-0 fw-semibold text-decoration-none small">
+                                Resend Code
+                            </button>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3 shadow-sm">
+                            Verify Code
+                        </button>
+
+                        <div class="text-center pt-3">
+                            <a href="#" class="text-decoration-none text-secondary small fw-medium">
+                                <i class="fa-solid fa-arrow-right ms-1"></i> Change email address
+                            </a>
+                        </div>
+                    </form>
+                </div>
+                }
+
+                <!-- step 3 new password -->
+                @if (step() === 3) {
+                <div>
+                    <form (submit)="submitPassword($event)">
+                        <div class="mb-4">
+                            <label for="new_password" class="form-label small fw-semibold text-secondary">
+                                New Password
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0 rounded-start-3 text-muted">
+                                    <i class="fa-solid fa-lock"></i>
+                                </span>
+                                <input [formControl]="password" type="password" id="new_password"
+                                    class="form-control border-start-0 rounded-end-3 py-2 small"
+                                    placeholder="Enter new password" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3 shadow-sm">
+                            Reset Password
+                        </button>
+                    </form>
+                </div>
+                }
+
+            </div>
+        </div>
+
+        <!-- !------------------------------ Left side (Illustration & Info) !------------------------------ -->
+        <div class="col-12 col-lg-6 order-2 order-lg-1 d-flex justify-content-center align-items-center">
+
+            <!-- Glassmorphism Card Wrapper for maximum legibility over background images -->
+            <div class="w-100 p-4 p-md-5 rounded-4 bg-white bg-opacity-75 border border-white border-opacity-50 shadow-sm d-flex flex-column align-items-center text-center"
+                style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); max-width: 480px;">
+
+                <!-- Graphics Box -->
+                <div class="w-100 rounded-4 bg-success-subtle position-relative overflow-hidden mb-4 d-flex align-items-center justify-content-center p-5"
+                    style="max-width: 400px; height: 260px;">
+                    
+                    <!-- Decorative Blur Circles -->
+                    <div class="position-absolute top-0 start-0 translate-middle w-50 h-50 bg-success opacity-25 rounded-circle"
+                        style="filter: blur(16px);">
+                    </div>
+                    <div class="position-absolute bottom-0 end-0 translate-middle w-50 h-50 bg-success opacity-25 rounded-circle"
+                        style="filter: blur(16px);">
+                    </div>
+
+                    <!-- Icons Group -->
+                    <div class="position-relative z-1 d-flex align-items-center gap-3">
+                        <div class="bg-white rounded-3 shadow-sm p-3" style="transform: rotate(-12deg) translateY(0.5rem);">
+                            <i class="fa-solid fa-envelope text-success fs-5"></i>
+                        </div>
+                        <div class="bg-white rounded-4 shadow p-3 z-2">
+                            <div class="bg-success-subtle rounded-3 p-3 d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-lock fs-1 text-success"></i>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-3 shadow-sm p-3" style="transform: rotate(12deg) translateY(0.5rem);">
+                            <i class="fa-solid fa-shield text-success fs-5"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="fs-2 fw-bold text-dark mb-3">
+                    Reset Your Password
+                </h1>
+                <p class="text-secondary mb-4 lh-lg" style="max-width: 380px;">
+                    Don't worry, it happens to the best of us. We'll help you get back into your account in no time.
+                </p>
+
+                <div class="d-flex flex-wrap justify-content-center gap-4 small fw-semibold text-dark">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-envelope text-success"></i> Email Verification
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-success"></i> Secure Reset
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-lock text-success"></i> Encrypted
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

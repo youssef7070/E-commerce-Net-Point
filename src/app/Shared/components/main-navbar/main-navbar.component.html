@@ -37,12 +37,12 @@
 
         <!-- Wishlist -->
         <li class="nav-item">
-          <a class="nav-link position-relative d-inline-flex align-items-center gap-2 px-2" routerLink="/wishlist"
+          <a class="nav-link position-relative d-inline-flex align-items-center gap-2 px-2" routerLink="/whislist"
             routerLinkActive="active" aria-label="Wishlist">
             <i class="fa-regular fa-heart fs-5"></i>
             <span class="d-lg-none">Wishlist</span>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-xs">
-              0
+              {{ wishlistCount() }}
               <span class="visually-hidden">items in wishlist</span>
             </span>
           </a>

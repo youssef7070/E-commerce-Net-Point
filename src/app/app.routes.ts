@@ -12,6 +12,7 @@ import { ForgotComponent } from './Features/forgot/forgot.component';
 import { authGuard } from './guards/auth-guard.guard';
 import { isLoggedGuard } from './guards/is-logged.guard';
 import { CartComponent } from './Features/cart/cart.component';
+import { WhislistComponent } from './Features/whislist/whislist.component';
 
 export const routes: Routes = [
     {
@@ -68,6 +69,10 @@ export const routes: Routes = [
             {
                 path: "cart",
                 component: CartComponent
+            },
+            {
+                path: "whislist",
+                component: WhislistComponent
             },
         ]
     },

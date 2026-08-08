@@ -1,6 +1,7 @@
 import { Component, effect, inject, input, signal } from '@angular/core';
 import { Product } from '../../core/Interfaces/product.interface';
 import { ProductsService } from '../../core/services/products.service';
+import { WishlistService } from '../../core/services/whislist.service';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { CartService } from '../../core/services/cart.service';
@@ -16,6 +17,7 @@ export class ProductsComponent {
 
   private readonly productsService = inject(ProductsService);
   private readonly cartService = inject(CartService);
+  private readonly wishlistService = inject(WishlistService);
   private readonly router = inject(Router);
   private readonly toastr = inject(ToastrService);
 
@@ -83,6 +85,30 @@ export class ProductsComponent {
       error: (err) => {
         console.error('Error adding product to cart:', err);
         this.toastr.error('Could not add the product to cart. Please try again.', 'Cart Error');
+      },
+    });
+  }
+
+  isInWishlist(productId: string): boolean {
+    return this.wishlistService.isInWishlist(productId);
+  }
+
+  addToWishlist(productId: string): void {
+    if (this.wishlistService.isInWishlist(productId)) {
+      this.toastr.info('This product is already in your wishlist.', 'Wishlist');
+      return;
+    }
+
+    this.wishlistService.addToWishlist(productId).subscribe({
+      next: () => {
+        // Refresh wishlistProducts so the wishlist page shows the new item
+        // and the nav counter reflects the updated count
+        this.wishlistService.getLoggedUserWishlist().subscribe();
+        this.toastr.success('Product added to wishlist.', 'Wishlist');
+      },
+      error: (err) => {
+        console.error('Error adding product to wishlist:', err);
+        this.toastr.error('Could not add the product to wishlist. Please try again.', 'Wishlist Error');
       },
     });
   }

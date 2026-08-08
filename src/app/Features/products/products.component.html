@@ -15,13 +15,15 @@
 
                     <!-- Favorite and Quick View buttons -->
                     <div class="position-absolute top-0 end-0 m-2 d-flex flex-column gap-2">
-                        <button
+                        <button type="button"
                             class="btn btn-light rounded-circle shadow-sm border p-0 d-flex align-items-center justify-content-center hover-emerald transition-all"
-                            style="width: 40px; height: 40px;">
-                            <i class="far fa-heart"></i>
+                            style="width: 40px; height: 40px;"
+                            (click)="addToWishlist(prod._id); $event.stopPropagation()">
+                            <i class="fa-heart" [class.fas]="isInWishlist(prod._id)"
+                                [class.far]="!isInWishlist(prod._id)" [class.text-danger]="isInWishlist(prod._id)"></i>
                         </button>
 
-                        <button (click)="showProductDetails(prod._id)"
+                        <button type="button" (click)="showProductDetails(prod._id); $event.stopPropagation()"
                             class="btn btn-light rounded-circle shadow-sm border p-0 d-flex align-items-center justify-content-center hover-emerald transition-all"
                             style="width: 40px; height: 40px;">
                             <i class="far fa-eye"></i>
@@ -99,8 +101,11 @@
                         <button class="btn btn-emerald btn-lg px-4 rounded-3" (click)="addToCart(selectedProduct._id)">
                             <i class="fas fa-cart-plus me-2"></i> Add to Cart
                         </button>
-                        <button class="btn btn-outline-danger btn-lg rounded-3">
-                            <i class="far fa-heart"></i>
+                        <button class="btn btn-outline-danger btn-lg rounded-3"
+                            (click)="addToWishlist(selectedProduct._id)">
+                            <i [class.fas]="isInWishlist(selectedProduct._id)"
+                                [class.far]="!isInWishlist(selectedProduct._id)" [class.fa-heart]="true"
+                                [class.text-danger]="isInWishlist(selectedProduct._id)"></i>
                         </button>
                     </div>
                 </div>

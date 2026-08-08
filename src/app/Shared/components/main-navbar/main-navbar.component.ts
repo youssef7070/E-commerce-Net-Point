@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { CartService } from '../../../core/services/cart.service';
+import { WishlistService } from '../../../core/services/whislist.service';
 
 @Component({
   selector: 'app-main-navbar',
@@ -12,7 +13,9 @@ import { CartService } from '../../../core/services/cart.service';
 export class MainNavbarComponent implements OnInit {
   private readonly _authService = inject(AuthService);
   private readonly cartService = inject(CartService);
+  private readonly wishlistService = inject(WishlistService);
   readonly cartCount = this.cartService.cartCount;
+  readonly wishlistCount = this.wishlistService.wishlistCount;
 
   ngOnInit(): void {
     if (localStorage.getItem('token')) {
@@ -21,6 +24,12 @@ export class MainNavbarComponent implements OnInit {
           if (res?.numOfCartItems != null) {
             this.cartService.cartCount.set(res.numOfCartItems);
           }
+        },
+      });
+
+      this.wishlistService.getLoggedUserWishlist().subscribe({
+        next: () => {
+          // wishlistCount is updated by the service signals
         },
       });
     }

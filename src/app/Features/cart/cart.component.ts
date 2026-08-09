@@ -32,10 +32,6 @@ export class CartComponent implements OnInit {
 
         this.cartDetails.set(res.data)
       }
-      // ,
-      // error: (err) => {
-      //   console.log(err.)
-      // }
     })
   }
 

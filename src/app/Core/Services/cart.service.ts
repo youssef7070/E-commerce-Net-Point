@@ -13,43 +13,23 @@ export class CartService {
 
 
     addProductToCart(productId: string): Observable<any> {
-        return this._HttpClient.post(`${BaseURL}/api/v1/cart`, { productId }, {
-            headers: {
-                token: localStorage.getItem('token')!
-            }
-        });
+        return this._HttpClient.post(`${BaseURL}/api/v1/cart`, { productId });
     }
 
     updateQuantity(count: number, productId: string): Observable<any> {
-        return this._HttpClient.put(`${BaseURL}/api/v1/cart/${productId}`, { count }, {
-            headers: {
-                token: localStorage.getItem('token')!
-            }
-        });
+        return this._HttpClient.put(`${BaseURL}/api/v1/cart/${productId}`, { count });
     }
 
     getLoggedUserCart(): Observable<any> {
-        return this._HttpClient.get(`${BaseURL}/api/v1/cart`, {
-            headers: {
-                token: localStorage.getItem('token')!
-            }
-        });
+        return this._HttpClient.get(`${BaseURL}/api/v1/cart`);
     }
 
     removeProduct(productId: string): Observable<any> {
-        return this._HttpClient.delete(`${BaseURL}/api/v1/cart/${productId}`, {
-            headers: {
-                token: localStorage.getItem('token')!
-            }
-        });
+        return this._HttpClient.delete(`${BaseURL}/api/v1/cart/${productId}`);
     }
 
     clearCart(): Observable<any> {
-        return this._HttpClient.delete(`${BaseURL}/api/v1/cart`, {
-            headers: {
-                token: localStorage.getItem('token')!
-            }
-        });
+        return this._HttpClient.delete(`${BaseURL}/api/v1/cart`);
     }
 
 }

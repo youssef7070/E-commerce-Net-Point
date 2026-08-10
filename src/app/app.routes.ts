@@ -13,6 +13,7 @@ import { authGuard } from './guards/auth-guard.guard';
 import { isLoggedGuard } from './guards/is-logged.guard';
 import { CartComponent } from './Features/cart/cart.component';
 import { WhislistComponent } from './Features/whislist/whislist.component';
+import { AddressComponent } from './Features/address/address.component';
 
 export const routes: Routes = [
     {
@@ -73,6 +74,10 @@ export const routes: Routes = [
             {
                 path: "whislist",
                 component: WhislistComponent
+            },
+            {
+                path: "address/:id",
+                component: AddressComponent
             },
         ]
     },

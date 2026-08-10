@@ -1,0 +1,27 @@
+<div class="container my-5">
+  <h2 class="my-4">Address :</h2>
+
+  <form [formGroup]="address" >
+    <textarea
+      formControlName="details"
+      class="form-control my-3"
+      placeholder="type your details..."
+    ></textarea>
+
+    <input
+      formControlName="phone"
+      class="form-control my-3"
+      type="tel"
+      placeholder="type your phone..."
+    />
+
+    <input
+      formControlName="city"
+      class="form-control my-3"
+      type="text"
+      placeholder="type your city..."
+    />
+
+    <button class="bg-primary btn text-white my-2 w-100" (click)="payment()">pay</button>
+  </form>
+</div>

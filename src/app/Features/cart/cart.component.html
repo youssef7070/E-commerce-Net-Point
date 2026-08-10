@@ -176,6 +176,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Checkout Button -->
+                    <div class="p-4 border-top">
+                        <button [routerLink]="`/address/${cartDetails()._id}`"
+                            class="btn bg-success text-white w-100 fw-semibold py-3 d-flex align-items-center justify-content-center gap-2">
+                            <i class="fa-solid fa-lock"></i> Proceed to Checkout
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Mobile-only Continue Shopping -->

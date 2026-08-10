@@ -1,27 +1,39 @@
 <div class="container my-5">
-  <h2 class="my-4">Address :</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h3 class="card-title mb-3">Shipping Address</h3>
 
-  <form [formGroup]="address" >
-    <textarea
-      formControlName="details"
-      class="form-control my-3"
-      placeholder="type your details..."
-    ></textarea>
+            <form [formGroup]="address" (ngSubmit)="payment()">
+                <div class="mb-3">
+                    <label class="form-label">Address details</label>
+                    <textarea formControlName="details" class="form-control" rows="3" placeholder="Enter street, building, apartment..."></textarea>
+                </div>
 
-    <input
-      formControlName="phone"
-      class="form-control my-3"
-      type="tel"
-      placeholder="type your phone..."
-    />
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Phone</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            <input formControlName="phone" class="form-control" type="tel" placeholder="+20 123 456 7890" />
+                        </div>
+                    </div>
 
-    <input
-      formControlName="city"
-      class="form-control my-3"
-      type="text"
-      placeholder="type your city..."
-    />
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">City</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-city"></i></span>
+                            <input formControlName="city" class="form-control" type="text" placeholder="Cairo" />
+                        </div>
+                    </div>
+                </div>
 
-    <button class="bg-primary btn text-white my-2 w-100" (click)="payment()">pay</button>
-  </form>
+                <div class="d-grid mt-3">
+                    <button type="submit" class="btn btn-primary btn-md">
+                        <i class="fas fa-credit-card me-2"></i>
+                        Proceed to Payment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

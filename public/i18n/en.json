@@ -1,0 +1,69 @@
+{
+  "mainNavbar": {
+    "home": "Home",
+    "categories": "Categories",
+    "brands": "Brands",
+    "products": "Products",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "logout": "Logout",
+    "lang": "عربي"
+  },
+  "authNavbar": {
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "lang": "عربي"
+  },
+  "common": {
+    "brandName": "Netpoint",
+    "loading": "Loading...",
+    "items": "items",
+    "search": "Search",
+    "viewAll": "View All",
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "delete": "Delete",
+    "update": "Update",
+    "edit": "Edit",
+    "checkout": "Checkout",
+    "address": "Address",
+    "profile": "Profile",
+    "forgotPassword": "Forgot Password?"
+  },
+  "auth": {
+    "welcomeBack": "Welcome back",
+    "welcome": "Welcome",
+    "login": "Login",
+    "register": "Register",
+    "createAccount": "Create Account",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "rememberMe": "Remember Me",
+    "emailAddress": "Email Address",
+    "fullName": "Full Name",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "phone": "Phone",
+    "forgotPasswordLink": "Forgot Password?"
+  },
+  "validation": {
+    "required": "This field is required.",
+    "email": "Please enter a valid email address.",
+    "passwordMin": "Password must be at least 6 characters long.",
+    "passwordMismatch": "Password confirmation is incorrect.",
+    "phoneInvalid": "Please enter a valid phone number.",
+    "nameRequired": "Name is required."
+  },
+  "messages": {
+    "wishlistEmpty": "Your wishlist is empty.",
+    "cartEmpty": "Your cart is empty.",
+    "itemsInWishlist": "items in wishlist",
+    "itemsInCart": "items in cart",
+    "buyEssentials": "Buy Essentials"
+  }
+}

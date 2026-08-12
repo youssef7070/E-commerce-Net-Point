@@ -1,0 +1,69 @@
+{
+  "mainNavbar": {
+    "home": "الرئيسية",
+    "categories": "الفئات",
+    "brands": "العلامات التجارية",
+    "products": "المنتجات",
+    "wishlist": "قائمة الرغبات",
+    "cart": "السلة",
+    "logout": "تسجيل الخروج",
+    "lang": "English"
+  },
+  "authNavbar": {
+    "signin": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "lang": "English"
+  },
+  "common": {
+    "brandName": "Netpoint",
+    "loading": "جارٍ التحميل...",
+    "items": "عناصر",
+    "search": "بحث",
+    "viewAll": "عرض الكل",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "continue": "متابعة",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "إرسال",
+    "delete": "حذف",
+    "update": "تحديث",
+    "edit": "تعديل",
+    "checkout": "إتمام الطلب",
+    "address": "العنوان",
+    "profile": "الملف الشخصي",
+    "forgotPassword": "هل نسيت كلمة المرور؟"
+  },
+  "auth": {
+    "welcomeBack": "مرحبًا بعودتك",
+    "welcome": "مرحبًا",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "createAccount": "إنشاء حساب",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "rememberMe": "تذكرني",
+    "emailAddress": "عنوان البريد الإلكتروني",
+    "fullName": "الاسم الكامل",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "phone": "الهاتف",
+    "forgotPasswordLink": "هل نسيت كلمة المرور؟"
+  },
+  "validation": {
+    "required": "هذا الحقل مطلوب.",
+    "email": "يرجى إدخال بريد إلكتروني صحيح.",
+    "passwordMin": "يجب أن تكون كلمة المرور 6 أحرف على الأقل.",
+    "passwordMismatch": "تأكيد كلمة المرور غير صحيح.",
+    "phoneInvalid": "يرجى إدخال رقم هاتف صحيح.",
+    "nameRequired": "الاسم مطلوب."
+  },
+  "messages": {
+    "wishlistEmpty": "قائمة الرغبات فارغة.",
+    "cartEmpty": "السلة فارغة.",
+    "itemsInWishlist": "عناصر في قائمة الرغبات",
+    "itemsInCart": "عناصر في السلة",
+    "buyEssentials": "شراء الاحتياجات الأساسية"
+  }
+}

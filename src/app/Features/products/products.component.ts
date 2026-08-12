@@ -1,4 +1,5 @@
 import { Component, effect, inject, input, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Product } from '../../core/Interfaces/product.interface';
 import { ProductsService } from '../../core/services/products.service';
 import { WishlistService } from '../../core/services/whislist.service';
@@ -6,14 +7,34 @@ import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { CartService } from '../../core/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { StockPipe, StockFilterMode } from '../../Shared/pipes/stock.pipe';
+import { AvailablePipe, AvailabilityFilterMode } from '../../Shared/pipes/available.pipe';
+import { SearchPipe } from '../../Shared/pipes/search.pipe';
 
 @Component({
   selector: 'app-products',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, FormsModule, StockPipe, AvailablePipe, SearchPipe],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })
 export class ProductsComponent {
+  text = signal<string>('');
+  availabilityFilter = signal<AvailabilityFilterMode>('all');
+  stockFilter = signal<StockFilterMode>('all');
+
+  setAvailabilityFilter(mode: AvailabilityFilterMode): void {
+    this.availabilityFilter.set(mode);
+  }
+
+  setStockFilter(mode: StockFilterMode): void {
+    this.stockFilter.set(mode);
+  }
+
+  resetFilters(): void {
+    this.text.set('');
+    this.availabilityFilter.set('all');
+    this.stockFilter.set('all');
+  }
 
   private readonly productsService = inject(ProductsService);
   private readonly cartService = inject(CartService);

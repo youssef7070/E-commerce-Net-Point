@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
+import { TranslateService } from "@ngx-translate/core";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 
 export class MyTranslationService {
 
-    constructor(private _TranslateService: TranslateService) {
+  constructor(private _TranslateService: TranslateService) {
     const savedLang = localStorage.getItem('lang') || 'en';
 
     this._TranslateService.use(savedLang);

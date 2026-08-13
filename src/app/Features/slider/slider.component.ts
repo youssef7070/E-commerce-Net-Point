@@ -7,4 +7,6 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angul
   styleUrl: './slider.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class SliderComponent { }
+export class SliderComponent { 
+  direction = localStorage.getItem('lang') === 'ar' ? 'rtl' : 'ltr';
+}

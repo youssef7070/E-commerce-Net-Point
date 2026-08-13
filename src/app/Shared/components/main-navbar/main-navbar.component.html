@@ -17,23 +17,26 @@
     <div class="collapse navbar-collapse" id="mainNavbar">
 
       <!-- Main Navigation -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-lg-1">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0  gap-lg-1">
         <li class="nav-item">
-          <a class="nav-link px-3 fw-medium" routerLink="/home" routerLinkActive="active">Home</a>
+          <a class="nav-link px-3 fw-medium" routerLink="/home" routerLinkActive="active">{{'mainNavbar.home'|translate}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-3 fw-medium" routerLink="/products" routerLinkActive="active">Products</a>
+          <a class="nav-link px-3 fw-medium" routerLink="/products" routerLinkActive="active">{{'mainNavbar.products'|translate}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-3 fw-medium" routerLink="/categories" routerLinkActive="active">Categories</a>
+          <a class="nav-link px-3 fw-medium" routerLink="/categories" routerLinkActive="active">{{'mainNavbar.categories'|translate}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-3 fw-medium" routerLink="/brands" routerLinkActive="active">Brands</a>
+          <a class="nav-link px-3 fw-medium" routerLink="/brands" routerLinkActive="active">{{'mainNavbar.brands'|translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3 fw-medium" (click)="toggleLanguage()" style="cursor: pointer;">{{'mainNavbar.lang'|translate}}</a>
         </li>
       </ul>
 
       <!-- User Actions & Utilities -->
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-2 gap-lg-3 mt-3 mt-lg-0 pt-3 pt-lg-0">
+      <ul class="navbar-nav align-items-lg-center gap-2 gap-lg-3 mt-3 mt-lg-0 pt-3 pt-lg-0">
 
         <!-- Wishlist -->
         <li class="nav-item">
@@ -69,7 +72,7 @@
           <button (click)="logout()"
             class="btn btn-outline-danger btn-sm px-3 rounded-pill fw-medium d-inline-flex align-items-center gap-2 w-100 w-lg-auto justify-content-center">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <span>Logout</span>
+            <span>{{'mainNavbar.logout'|translate}}</span>
           </button>
         </li>
 

@@ -2,36 +2,23 @@
   <div class="position-relative form-floating">
 
     @if (element === 'input') {
-      <input
-        [class]="{
+    <input [class]="{
           'is-valid': control?.valid,
           'is-invalid': control?.invalid && control?.touched
-        }"
-        [formControl]="control"
-        [type]="typeInput === 'password' ? (flag ? 'password' : 'text') : typeInput"
-        [id]="idInput"
-        class="form-control pe-5"
-        placeholder="{{ lableInput }}"
-      />
+        }" [formControl]="control" [type]="typeInput === 'password' ? (flag ? 'password' : 'text') : typeInput"
+      [id]="idInput" class="form-control pe-5" placeholder="{{ lableInput }}" />
     }
 
     @else if (element === "text") {
-      <textarea
-        [class]="{
+    <textarea [class]="{
           'is-valid': control?.valid,
           'is-invalid': control?.invalid && control?.touched
-        }"
-        [formControl]="control"
-        [id]="idInput"
-        class="form-control"
-        placeholder="{{ lableInput }}"
-        style="height: 120px">
+        }" [formControl]="control" [id]="idInput" class="form-control" placeholder="{{ lableInput }}"
+      style="height: 120px">
       </textarea>
     }
 
-    <label
-      [for]="idInput"
-      [class]="{
+    <label [for]="idInput" [class]="{
         'text-success': control?.valid,
         'text-danger': control?.invalid && control?.touched
       }">
@@ -39,42 +26,38 @@
     </label>
 
     @if (typeInput === 'password') {
-      <span
-        (click)="flag = !flag"
-        class="position-absolute top-50 end-0 translate-middle-y me-3"
-        style="cursor: pointer; z-index: 5;">
-        <i class="fas"
-           [class.fa-eye]="flag"
-           [class.fa-eye-slash]="!flag">
-        </i>
-      </span>
+    <span (click)="flag = !flag" class="position-absolute top-50 end-0 translate-middle-y me-3"
+      style="cursor: pointer; z-index: 5;">
+      <i class="fas" [class.fa-eye]="flag" [class.fa-eye-slash]="!flag">
+      </i>
+    </span>
     }
 
   </div>
 
   <!-- Errors -->
   @if (control?.errors && control?.touched) {
-    <div class="alert alert-danger mt-2 mb-0" role="alert">
-      <ul class="mb-0">
-        @if (control?.hasError('required')) {
-          <li>Input is required.</li>
-        }
-        @if (control?.hasError('minlength')) {
-          <li>Input should be more than or equal to 3 characters.</li>
-        }
-        @if (control?.hasError('maxlength')) {
-          <li>Input should be less than or equal to 20 characters.</li>
-        }
-        @if (control?.hasError('email')) {
-          <li>Please enter a valid email address.</li>
-        }
-        @if (control?.hasError('pattern')) {
-          <li><ng-content /></li>
-        }
-        @if (control?.hasError('mismatch')) {
-          <li>Password confirmation is incorrect.</li>
-        }
-      </ul>
-    </div>
+  <div class="alert alert-danger mt-2 mb-0" role="alert">
+    <ul class="mb-0">
+      @if (control?.hasError('required')) {
+      <li>Input is required.</li>
+      }
+      @if (control?.hasError('minlength')) {
+      <li>Input should be more than or equal to 3 characters.</li>
+      }
+      @if (control?.hasError('maxlength')) {
+      <li>Input should be less than or equal to 20 characters.</li>
+      }
+      @if (control?.hasError('email')) {
+      <li>Please enter a valid email address.</li>
+      }
+      @if (control?.hasError('pattern')) {
+      <li><ng-content /></li>
+      }
+      @if (control?.hasError('mismatch')) {
+      <li>Password confirmation is incorrect.</li>
+      }
+    </ul>
+  </div>
   }
 </div>

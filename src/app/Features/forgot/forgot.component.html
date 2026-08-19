@@ -12,8 +12,8 @@
                     </span>
                 </div>
 
-                <h2 class="fs-4 fw-bold text-dark text-center mb-1">Forgot Password?</h2>
-                <p class="text-muted text-center small mb-4">No worries, we'll send you a reset code</p>
+                <h2 class="fs-4 fw-bold text-dark text-center mb-1">{{ 'forgot.title' | translate }}</h2>
+                <p class="text-muted text-center small mb-4">{{ 'forgot.subtitle' | translate }}</p>
 
                 <!-- Step indicator design -->
                 <div class="d-flex align-items-center justify-content-center mb-4 px-2">
@@ -42,25 +42,25 @@
                 <div>
                     <form (submit)="submitEmail($event)">
                         <div class="mb-4">
-                            <label for="email" class="form-label small fw-semibold text-secondary">Email Address</label>
+                            <label for="email" class="form-label small fw-semibold text-secondary">{{ 'forgot.emailLabel' | translate }}</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0 rounded-start-3 text-muted">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
                                 <input [formControl]="email" type="email" id="email"
                                     class="form-control bg-light border-start-0 rounded-end-3 py-2 small"
-                                    placeholder="Enter your email address" />
+                                    [placeholder]="'forgot.emailPlaceholder' | translate" />
                             </div>
                         </div>
 
                         <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3 shadow-sm">
-                            Send Reset Code
+                            {{ 'forgot.sendCode' | translate }}
                         </button>
                     </form>
 
                     <div class="mt-4 text-center">
                         <a href="#" class="text-decoration-none text-success small fw-medium">
-                            <i class="fa-solid fa-arrow-right ms-1"></i> Back to Sign In
+                            <i class="fa-solid fa-arrow-right ms-1"></i> {{ 'forgot.backToSignIn' | translate }}
                         </a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     <form (submit)="submitCode($event)">
                         <div class="mb-3">
                             <label for="verification_code" class="form-label small fw-semibold text-secondary">
-                                Verification Code
+                                {{ 'forgot.verificationLabel' | translate }}
                             </label>
                             <div class="input-group">
                                 <span class="input-group-text bg-white border-end-0 rounded-start-3 text-muted">
@@ -86,19 +86,19 @@
                         </div>
 
                         <div class="text-center small text-muted mb-4">
-                            Didn't receive the code?
+                            {{ 'forgot.didntReceive' | translate }}
                             <button type="button" class="btn btn-link text-success p-0 fw-semibold text-decoration-none small">
-                                Resend Code
+                                {{ 'forgot.resendCode' | translate }}
                             </button>
                         </div>
 
                         <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3 shadow-sm">
-                            Verify Code
+                            {{ 'forgot.verifyCode' | translate }}
                         </button>
 
                         <div class="text-center pt-3">
                             <a href="#" class="text-decoration-none text-secondary small fw-medium">
-                                <i class="fa-solid fa-arrow-right ms-1"></i> Change email address
+                                <i class="fa-solid fa-arrow-right ms-1"></i> {{ 'forgot.changeEmail' | translate }}
                             </a>
                         </div>
                     </form>
@@ -111,7 +111,7 @@
                     <form (submit)="submitPassword($event)">
                         <div class="mb-4">
                             <label for="new_password" class="form-label small fw-semibold text-secondary">
-                                New Password
+                                {{ 'forgot.newPasswordLabel' | translate }}
                             </label>
                             <div class="input-group">
                                 <span class="input-group-text bg-white border-end-0 rounded-start-3 text-muted">
@@ -119,12 +119,12 @@
                                 </span>
                                 <input [formControl]="password" type="password" id="new_password"
                                     class="form-control border-start-0 rounded-end-3 py-2 small"
-                                    placeholder="Enter new password" />
+                                    [placeholder]="'forgot.newPasswordPlaceholder' | translate" />
                             </div>
                         </div>
 
                         <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3 shadow-sm">
-                            Reset Password
+                            {{ 'forgot.resetPassword' | translate }}
                         </button>
                     </form>
                 </div>
@@ -169,21 +169,21 @@
                 </div>
 
                 <h1 class="fs-2 fw-bold text-dark mb-3">
-                    Reset Your Password
+                    {{ 'forgot.resetTitle' | translate }}
                 </h1>
                 <p class="text-secondary mb-4 lh-lg" style="max-width: 380px;">
-                    Don't worry, it happens to the best of us. We'll help you get back into your account in no time.
+                    {{ 'forgot.resetSubtitle' | translate }}
                 </p>
 
                 <div class="d-flex flex-wrap justify-content-center gap-4 small fw-semibold text-dark">
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fa-solid fa-envelope text-success"></i> Email Verification
+                        <i class="fa-solid fa-envelope text-success"></i> {{ 'forgot.emailVerification' | translate }}
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fa-solid fa-shield-halved text-success"></i> Secure Reset
+                        <i class="fa-solid fa-shield-halved text-success"></i> {{ 'forgot.secureReset' | translate }}
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fa-solid fa-lock text-success"></i> Encrypted
+                        <i class="fa-solid fa-lock text-success"></i> {{ 'forgot.encrypted' | translate }}
                     </div>
                 </div>
 

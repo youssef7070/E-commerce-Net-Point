@@ -3,11 +3,12 @@ import { Component, OnInit, PLATFORM_ID, computed, inject } from '@angular/core'
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { WishlistService } from '../../core/services/whislist.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-whislist',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, TranslatePipe],
   templateUrl: './whislist.component.html',
   styleUrl: './whislist.component.scss',
 })

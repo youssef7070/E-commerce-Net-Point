@@ -5,48 +5,48 @@
             
             <!-- Upgraded Header -->
             <div class="text-center mb-4">
-                <h2 class="fw-bold text-success mb-1">Sign Up Now</h2>
-                <p class="text-muted">Create an account to get started</p>
+                <h2 class="fw-bold text-success mb-1">{{ 'signUp.title' | translate }}</h2>
+                <p class="text-muted">{{ 'signUp.subtitle' | translate }}</p>
             </div>
             
             <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
 
                 <!-- Name -->
                 <div class="mb-3">
-                    <app-input [control]="signUpForm.get('name')" [typeInput]="'text'" [idInput]="'name'" [lableInput]="'Name'"></app-input>
+                    <app-input [control]="signUpForm.get('name')" [typeInput]="'text'" [idInput]="'name'" [lableInput]="'auth.fullName' | translate"></app-input>
     
                 </div>
                     
                 <!-- Email -->
                 <div class="mb-3">
-                    <app-input [control]="signUpForm.get('email')" [typeInput]="'email'" [idInput]="'email'" [lableInput]="'Email'"></app-input>
+                    <app-input [control]="signUpForm.get('email')" [typeInput]="'email'" [idInput]="'email'" [lableInput]="'auth.emailAddress' | translate"></app-input>
                 </div>
                 
                 <!-- Password -->
                 <div class="mb-3">
-                    <app-input [control]="signUpForm.get('password')" [typeInput]="'password'" [idInput]="'password'" [lableInput]="'Password'">
-                        Must be at least 6 characters long.
+                    <app-input [control]="signUpForm.get('password')" [typeInput]="'password'" [idInput]="'password'" [lableInput]="'auth.password' | translate">
+                        {{ 'signUp.helper' | translate }}
                     </app-input>
                 </div>
                 
                 <!-- Confirm Password -->
                 <div class="mb-3">
-                    <app-input [control]="signUpForm.get('rePassword')" [typeInput]="'password'" [idInput]="'rePassword'" [lableInput]="'Confirm Password'"></app-input>
+                    <app-input [control]="signUpForm.get('rePassword')" [typeInput]="'password'" [idInput]="'rePassword'" [lableInput]="'auth.confirmPassword' | translate"></app-input>
                 </div>
                     
                 <!-- Phone -->
                 <div class="mb-4">
-                    <app-input [control]="signUpForm.get('phone')" [typeInput]="'tel'" [idInput]="'phone'" [lableInput]="'Phone'">
-                        Please enter a valid Egyptian number.
+                    <app-input [control]="signUpForm.get('phone')" [typeInput]="'tel'" [idInput]="'phone'" [lableInput]="'auth.phone' | translate">
+                        {{ 'signUp.phoneHelper' | translate }}
                     </app-input>
                 </div>
 
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn-success w-100 py-2 fw-semibold shadow-sm" [disabled]="isLoading">
                     @if (isLoading) {
-                        <i class="fas fa-spinner fa-spin me-2"></i> Creating Account...
+                        <i class="fas fa-spinner fa-spin me-2"></i> {{ 'signUp.creating' | translate }}
                     } @else {
-                        Sign Up
+                        {{ 'signUp.submit' | translate }}
                     }
                 </button>
                 

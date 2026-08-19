@@ -4,11 +4,12 @@ import { Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
 import { InputComponent } from "../../Shared/components/input/input.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [ReactiveFormsModule, InputComponent, RouterLink],
+  imports: [ReactiveFormsModule, InputComponent, RouterLink, TranslatePipe],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
 })

@@ -5,10 +5,11 @@ import { Subscription } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
 import { InputComponent } from '../../Shared/components/input/input.component';
 import { SignUpData } from '../../core/Interfaces/signup.interface';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ReactiveFormsModule, InputComponent],
+  imports: [ReactiveFormsModule, InputComponent, TranslatePipe],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })

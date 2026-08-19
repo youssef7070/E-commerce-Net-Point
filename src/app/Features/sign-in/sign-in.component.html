@@ -3,35 +3,35 @@
         <div class="card-body p-4 p-sm-5">
 
             <div class="text-center mb-4">
-                <h2 class="fw-bold text-success mb-1">Sign In</h2>
-                <p class="text-muted">Welcome back! Please enter your details</p>
+                <h2 class="fw-bold text-success mb-1">{{ 'signIn.title' | translate }}</h2>
+                <p class="text-muted">{{ 'signIn.subtitle' | translate }}</p>
             </div>
 
             <form [formGroup]="signInForm" (ngSubmit)="submitForm()">
 
                 <div class="mb-3">
                     <app-input [control]="signInForm.get('email')" [typeInput]="'email'" [idInput]="'email'"
-                        [lableInput]="'Email'">
+                        [lableInput]="'auth.emailAddress' | translate">
                     </app-input>
                 </div>
 
                 <div class="mb-4">
                     <app-input [control]="signInForm.get('password')" [typeInput]="'password'" [idInput]="'password'"
-                        [lableInput]="'Password'">
+                        [lableInput]="'auth.password' | translate">
                     </app-input>
                 </div>
 
                 <button type="submit" class="btn btn-success w-100 py-2 fw-semibold shadow-sm" [disabled]="isLoading">
                     @if (isLoading) {
-                    <i class="fas fa-spinner fa-spin me-2"></i> Signing In...
+                    <i class="fas fa-spinner fa-spin me-2"></i> {{ 'signIn.signingIn' | translate }}
                     } @else {
-                    Sign In
+                    {{ 'signIn.title' | translate }}
                     }
                 </button>
 
                 <a routerLink="/forgot"
                     class="d-block text-center  pt-3 text-decoration-none text-danger fw-medium pe-auto">
-                    Forgot Password?
+                    {{ 'signIn.forgotPassword' | translate }}
                 </a>
 
                 @if(msgError) {

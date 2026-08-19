@@ -2,10 +2,11 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { CartService } from '../../core/services/cart.service';
 import { Cart } from '../../core/Interfaces/cart.interface';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cart',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
@@ -74,7 +75,7 @@ export class CartComponent implements OnInit {
     this.cartService.clearCart().subscribe({
       next: (res) => {
         console.log(res)
-        this.cartService.cartCount.set(res.numOfCartItems)
+        this.cartService.cartCount.set(0)
 
         this.cartDetails.set({ products: [], totalCartPrice: 0 } as any)
       }

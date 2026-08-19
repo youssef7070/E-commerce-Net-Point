@@ -4,7 +4,7 @@
     <!-- Brand Logo / Name -->
     <a class="navbar-brand fw-bold fs-4 text-primary d-flex align-items-center gap-2 m-0" routerLink="/home">
       <i class="fa-solid fa-store"></i>
-      <span>Netpoint</span>
+      <span>{{ 'common.brandName' | translate }}</span>
     </a>
 
     <!-- Mobile Toggler -->
@@ -43,10 +43,10 @@
           <a class="nav-link position-relative d-inline-flex align-items-center gap-2 px-2" routerLink="/whislist"
             routerLinkActive="active" aria-label="Wishlist">
             <i class="fa-regular fa-heart fs-5"></i>
-            <span class="d-lg-none">Wishlist</span>
+            <span class="d-lg-none">{{ 'mainNavbar.wishlist' | translate }}</span>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-xs">
               {{ wishlistCount() }}
-              <span class="visually-hidden">items in wishlist</span>
+              <span class="visually-hidden">{{ 'messages.itemsInWishlist' | translate }}</span>
             </span>
           </a>
         </li>
@@ -56,10 +56,10 @@
           <a class="nav-link position-relative d-inline-flex align-items-center gap-2 px-2" routerLink="/cart"
             routerLinkActive="active" aria-label="Shopping Cart">
             <i class="fa-solid fa-cart-shopping fs-5"></i>
-            <span class="d-lg-none">Cart</span>
+            <span class="d-lg-none">{{ 'mainNavbar.cart' | translate }}</span>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-xs">
               {{ cartCount() }}
-              <span class="visually-hidden">items in cart</span>
+              <span class="visually-hidden">{{ 'messages.itemsInCart' | translate }}</span>
             </span>
           </a>
         </li>

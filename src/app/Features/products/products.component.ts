@@ -10,10 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 import { StockPipe, StockFilterMode } from '../../Shared/pipes/stock.pipe';
 import { AvailablePipe, AvailabilityFilterMode } from '../../Shared/pipes/available.pipe';
 import { SearchPipe } from '../../Shared/pipes/search.pipe';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-products',
-  imports: [CurrencyPipe, FormsModule, StockPipe, AvailablePipe, SearchPipe],
+  imports: [CurrencyPipe, FormsModule, StockPipe, AvailablePipe, SearchPipe, TranslatePipe],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })

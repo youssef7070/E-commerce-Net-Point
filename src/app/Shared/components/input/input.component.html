@@ -40,22 +40,22 @@
   <div class="alert alert-danger mt-2 mb-0" role="alert">
     <ul class="mb-0">
       @if (control?.hasError('required')) {
-      <li>Input is required.</li>
+      <li>{{ 'input.required' | translate }}</li>
       }
       @if (control?.hasError('minlength')) {
-      <li>Input should be more than or equal to 3 characters.</li>
+      <li>{{ 'input.minlength' | translate }}</li>
       }
       @if (control?.hasError('maxlength')) {
-      <li>Input should be less than or equal to 20 characters.</li>
+      <li>{{ 'input.maxlength' | translate }}</li>
       }
       @if (control?.hasError('email')) {
-      <li>Please enter a valid email address.</li>
+      <li>{{ 'input.email' | translate }}</li>
       }
       @if (control?.hasError('pattern')) {
       <li><ng-content /></li>
       }
       @if (control?.hasError('mismatch')) {
-      <li>Password confirmation is incorrect.</li>
+      <li>{{ 'input.mismatch' | translate }}</li>
       }
     </ul>
   </div>

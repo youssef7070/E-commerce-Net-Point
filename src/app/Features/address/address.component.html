@@ -1,17 +1,17 @@
 <div class="container my-5">
     <div class="card shadow-sm">
         <div class="card-body">
-            <h3 class="card-title mb-3">Shipping Address</h3>
+            <h3 class="card-title mb-3">{{ 'address.title' | translate }}</h3>
 
             <form [formGroup]="address" (ngSubmit)="payment()">
                 <div class="mb-3">
-                    <label class="form-label">Address details</label>
-                    <textarea formControlName="details" class="form-control" rows="3" placeholder="Enter street, building, apartment..."></textarea>
+                    <label class="form-label">{{ 'address.detailsLabel' | translate }}</label>
+                    <textarea formControlName="details" class="form-control" rows="3" [placeholder]="'address.detailsPlaceholder' | translate"></textarea>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">Phone</label>
+                        <label class="form-label">{{ 'address.phoneLabel' | translate }}</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                             <input formControlName="phone" class="form-control" type="tel" placeholder="+20 123 456 7890" />
@@ -19,10 +19,10 @@
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">City</label>
+                        <label class="form-label">{{ 'address.cityLabel' | translate }}</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-city"></i></span>
-                            <input formControlName="city" class="form-control" type="text" placeholder="Cairo" />
+                            <input formControlName="city" class="form-control" type="text" [placeholder]="'address.cityPlaceholder' | translate" />
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="d-grid mt-3">
                     <button type="submit" class="btn btn-primary btn-md">
                         <i class="fas fa-credit-card me-2"></i>
-                        Proceed to Payment
+                        {{ 'address.submit' | translate }}
                     </button>
                 </div>
             </form>
